@@ -14,3 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#IDEA project files
+.idea/*
+/RailsCricket.iml
