@@ -17,9 +17,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: RailsCricket_development
+  database: railscricket_development
   pool: 5
-  username: RailsCricket
+  host: localhost
+  username: postgres
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -46,9 +47,10 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: RailsCricket_test
+  database: railscricket_test
   pool: 5
-  username: RailsCricket
+  host: localhost
+  username: postgres
   password:
 
 production:
