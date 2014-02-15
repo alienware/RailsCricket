@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140215121215) do
+ActiveRecord::Schema.define(version: 20140215144723) do
+
+  create_table "match_players", force: true do |t|
+    t.integer "match_id"
+    t.integer "player_id"
+    t.integer "runs"
+    t.integer "wickets"
+    t.integer "catches"
+    t.integer "stumps"
+  end
+
+  add_index "match_players", ["match_id"], name: "index_match_players_on_match_id", using: :btree
+  add_index "match_players", ["player_id"], name: "index_match_players_on_player_id", using: :btree
 
   create_table "matches", force: true do |t|
     t.integer  "team1_id"
@@ -21,34 +33,22 @@ ActiveRecord::Schema.define(version: 20140215121215) do
     t.datetime "updated_at"
   end
 
-  create_table "matches_players_joins", force: true do |t|
-    t.integer "match_id"
-    t.integer "player_id"
-    t.integer "runs"
-    t.integer "wickets"
-    t.integer "catches"
-    t.integer "stumps"
-  end
-
-  add_index "matches_players_joins", ["match_id"], name: "index_matches_players_joins_on_match_id", using: :btree
-  add_index "matches_players_joins", ["player_id"], name: "index_matches_players_joins_on_player_id", using: :btree
-
   create_table "players", force: true do |t|
     t.string   "name"
     t.datetime "dob"
     t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "statistics"
+    t.text     "statistics", default: "---\n:odi_runs: 0\n:test_runs: 0\n:odi_wickets: 0\n:test_wickets: 0\n"
   end
 
-  create_table "players_teams_joins", force: true do |t|
+  create_table "players_teams", force: true do |t|
     t.integer "player_id"
     t.integer "team_id"
   end
 
-  add_index "players_teams_joins", ["player_id"], name: "index_players_teams_joins_on_player_id", using: :btree
-  add_index "players_teams_joins", ["team_id"], name: "index_players_teams_joins_on_team_id", using: :btree
+  add_index "players_teams", ["player_id"], name: "index_players_teams_on_player_id", using: :btree
+  add_index "players_teams", ["team_id"], name: "index_players_teams_on_team_id", using: :btree
 
   create_table "teams", force: true do |t|
     t.string   "name"
