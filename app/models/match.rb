@@ -4,14 +4,12 @@ class Match < ActiveRecord::Base
 	belongs_to :team1, :class_name => 'Team'
 	belongs_to :team2, :class_name => 'Team'
 
-	def top10 format, field
+	def top2 field
 		total = {}
-		Player.all.each { |player|
-			player.matches_with_format(format).each { |match|
-				total[player] += match.send(field)
-			}
+		MatchPlayer.where(:match => self).each { |match_player|
+			total[match_player.player_id] = match_player.send(field)
 		}
 
-		total.sort_by {|key,value| -value}.first(10).map(&:first).flatten
+		total.sort_by {|key,value| -value}.first(2).map(&:first)
 	end
 end
