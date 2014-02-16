@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55276c71-235e-4ab9-8291-76373d7502ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/matches_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/matches_helper.rb" />
     </list>
     <ignored path="RailsCricket.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,7 +24,7 @@
     <file path="/match_players_controller.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392499023296" ignored="false" />
     <file path="/routes.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392573488431" ignored="false" />
     <file path="/Gemfile" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392571994549" ignored="false" />
-    <file path="/matches_helper.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392553811648" ignored="false" />
+    <file path="/matches_helper.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392579073022" ignored="false" />
     <file path="/index.html.erb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392540255109" ignored="false" />
     <file path="/teams_controller.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392574230607" ignored="false" />
     <file path="/players_controller.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392572955926" ignored="false" />
@@ -98,10 +98,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
+      <file leaf-file-name="matches_helper.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/helpers/matches_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="25" selection-start="1091" selection-end="1096" vertical-scroll-proportion="0.0">
+            <state line="19" column="91" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.43990666">
               <folding />
             </state>
           </provider>
@@ -161,10 +161,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="45" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.74712646">
+            <state line="66" column="45" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -211,7 +211,6 @@
         <option value="$PROJECT_DIR$/app/controllers/match_players_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/matches/index.html.erb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/matches_helper.rb" />
         <option value="$PROJECT_DIR$/app/models/match.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/application.rb" />
@@ -222,6 +221,7 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/teams_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/team.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/matches_helper.rb" />
       </list>
     </option>
   </component>
@@ -962,13 +962,6 @@
         <state line="18" column="36" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/matches_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="6" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="25" selection-start="1091" selection-end="1096" vertical-scroll-proportion="0.0">
@@ -997,9 +990,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/matches_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/team.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="108" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
+        <state line="27" column="47" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1011,16 +1004,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/team.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/matches_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="47" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/teams_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="106" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.0">
+        <state line="32" column="108" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1034,7 +1020,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="45" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.74712646">
+        <state line="66" column="45" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/teams_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="106" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/matches_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="91" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.43990666">
           <folding />
         </state>
       </provider>

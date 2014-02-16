@@ -1,5 +1,9 @@
 module MatchesHelper
 
+
+	#randonStatisticsGenerator allocated runs scored and wickets fallen when 2 teams face each other
+	#Runs are at random between 50 and 299 and wicket tally is team 0 to number of players in opposition
+
 	def randomStatisticsGenerator team1, team2 #TODO: logic is not perfect, number of players scoring != number of wickets+2
 		runs_scored_by_team1 = [*50...300].sample
 		wickets_taken_by_team1 = [*0...team2.players.count].sample
@@ -8,6 +12,12 @@ module MatchesHelper
 		wickets_taken_by_team2 = [*0...team1.players.count].sample
 		[runs_scored_by_team1, wickets_taken_by_team1, runs_scored_by_team2, wickets_taken_by_team2]
 	end
+
+	#The following method allocated runs and wickets of a team to individual players
+	#Players for each sides are picked and supplied to this method
+	#As player is allocated runs/wickets, that amount is depleted from team's total and added to player's statistics and match-player's scorecard
+	#The indexes for statistics array as manipulated using team_index (0/1) and players_index(0...11) to assign correct runs/wickets
+	#Last player in a team is allocated remaining runs to be scored/wickets taken by his team
 
 	def addMatchPlayers player, player_index, team, team_index	#players_index is used to assign remaining statistics to last player and team_index is used to decide which statistics is to be used
 		match_player = MatchPlayer.create(:match => @match, :player => player)
