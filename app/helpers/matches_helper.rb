@@ -12,41 +12,25 @@ module MatchesHelper
 	def addMatchPlayers player, player_index, team, team_index	#players_index is used to assign remaining statistics to last player and team_index is used to decide which statistics is to be used
 		match_player = MatchPlayer.create(:match => @match, :player => player)
 
-		case player_index
+		if player_index.eql? team.players.count
+			player.statistics[(@match.format + '_runs').to_sym] = @statistics[team_index*2]
+			player.statistics[(@match.format + '_wickets').to_sym] = @statistics[1 + (team_index-1)*2]
 
-			when team.players.count - 1
-				player.statistics[(@match.format + '_wickets').to_sym] = @statistics[1 + (team_index)*2]
-				match_player.wickets = @statistics[1 + (team_index)*2]
-				@statistics[1 + (team_index)*2] = 0
+			match_player.runs = @statistics[team_index*2]
+			match_player.wickets = @statistics[1 + (team_index-1)*2]
+		else
+			runs_scored = [*0...(@statistics[team_index*2 ]) + 1].sample #adding 1 to ensure closed interval on statistics for [*0...0].sample returns nil
+			@statistics[team_index*2] -= runs_scored
 
-				player.statistics[(@match.format + '_runs').to_sym] = @statistics[team_index*2]
-				match_player.runs = @statistics[team_index*2]
-				@statistics[team_index*2] = 0
+			wickets_taken = [*0...(@statistics[1 + (team_index-1)*2]) + 1].sample #adding 1 to ensure closed interval on statistics for [*0...0].sample returns nil
+			@statistics[1 + (team_index-1)*2] -= wickets_taken
 
-			when @statistics[3 - 2*team_index] + 1
-				wickets_taken = [*0...(@statistics[1 + (team_index)*2]) + 1].sample #adding 1 to ensure closed interval on statistics for [*0...0].sample returns nil
-				@statistics[1 + (team_index)*2] -= wickets_taken
-				player.statistics[(@match.format + '_wickets').to_sym] = wickets_taken
-				match_player.wickets = wickets_taken
+			player.statistics[(@match.format + '_runs').to_sym] = runs_scored
+			player.statistics[(@match.format + '_wickets').to_sym] = wickets_taken
 
-				player.statistics[(@match.format + '_runs').to_sym] = @statistics[team_index*2]
-				match_player.runs = @statistics[team_index*2]
-				@statistics[team_index*2] = 0
-
-			else
-				runs_scored = [*0...(@statistics[team_index*2]) + 1].sample #adding 1 to ensure closed interval on statistics for [*0...0].sample returns nil
-				@statistics[team_index*2] -= runs_scored
-
-				wickets_taken = [*0...(@statistics[1 + (team_index)*2]) + 1].sample #adding 1 to ensure closed interval on statistics for [*0...0].sample returns nil
-				@statistics[1 + (team_index)*2] -= wickets_taken
-
-				player.statistics[(@match.format + '_runs').to_sym] = runs_scored
-				player.statistics[(@match.format + '_wickets').to_sym] = wickets_taken
-
-				match_player.runs = runs_scored
-				match_player.wickets = wickets_taken
+			match_player.runs = runs_scored
+			match_player.wickets = wickets_taken
 		end
-
 		match_player.save
 		player.save
 	end

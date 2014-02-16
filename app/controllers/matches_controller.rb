@@ -28,4 +28,8 @@ class MatchesController < ApplicationController
 		end
 
 	end
+
+	def top
+		render :json =>
+	end
 end
