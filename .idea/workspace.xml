@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55276c71-235e-4ab9-8291-76373d7502ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/players_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/players_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/team.rb" afterPath="$PROJECT_DIR$/app/models/team.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/teams_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/teams_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="55276c71-235e-4ab9-8291-76373d7502ff" name="Default" comment="" />
     <ignored path="RailsCricket.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392459730034" ignored="false" />
@@ -129,19 +122,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="11" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.0">
+            <state line="58" column="11" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.7011494">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teams_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="teams_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/teams_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="35" selection-start="723" selection-end="723" vertical-scroll-proportion="0.57471263">
+            <state line="25" column="35" selection-start="723" selection-end="723" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1021,13 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="11" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/players_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="64" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
@@ -1037,7 +1023,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/teams_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="35" selection-start="723" selection-end="723" vertical-scroll-proportion="0.57471263">
+        <state line="25" column="35" selection-start="723" selection-end="723" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="11" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.7011494">
           <folding />
         </state>
       </provider>
