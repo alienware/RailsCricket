@@ -7,7 +7,7 @@ class Match < ActiveRecord::Base
 	def top field, n
 		total = {}
 		MatchPlayer.where(:match => self).each { |match_player|
-			total[match_player.player_id] = match_player.send(field)
+			total[match_player.player.name] = match_player.send(field.to_sym)
 		}
 
 		total.sort_by {|key,value| -value}.first(n)

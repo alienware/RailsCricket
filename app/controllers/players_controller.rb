@@ -30,6 +30,10 @@ class PlayersController < ApplicationController
 		render :json => { :message => "Player has been successfully removed from team #{team.name}." }, :status => 200
 	end
 
+	def top
+		render :json => { :top => Player.top(params[:format], params[:field], params[:num].to_i)}, :status => 200
+	end
+
 	private
 
 	def player_params

@@ -30,6 +30,6 @@ class MatchesController < ApplicationController
 	end
 
 	def top
-		render :json =>
+		render :json => { :top => Match.find(params[:match_id]).top(params[:field], params[:num].to_i).to_json }, :status => 200
 	end
 end

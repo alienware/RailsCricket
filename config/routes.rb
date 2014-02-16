@@ -53,7 +53,9 @@ RailsCricket::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-	resources :matches
+	resources :matches do
+		get '/statistics/top' => 'matches#top'
+	end
 	resources :players  do
 		post '/addTeam' => 'players#addTeam'
 		post '/removeTeam' => 'players#removeTeam'
@@ -61,5 +63,9 @@ RailsCricket::Application.routes.draw do
 	resources :teams do
 		post '/addPlayers' => 'teams#addPlayers', :format => 'json'
 		post '/removePlayers' => 'teams#removePlayers', :format => 'json'
+		get '/top/for' => 'teams#topFor'
+		get '/top/against' => 'teams#topAgainst'
 	end
+
+	get '/players/statistics/top' => 'players#top'
 end

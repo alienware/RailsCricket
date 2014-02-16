@@ -9,12 +9,12 @@ class Player < ActiveRecord::Base
 		self.matches.where(:format => format)
 	end
 
-	def self.top10 format, field
+	def self.top format, field, num
 		total = {}
 		Player.all.each { |player|
-			total[player.id] = player.statistics[(format + '_' + field).to_sym]
+			total[player.name] = player.statistics[(format + '_' + field).to_sym]
 		}
 
-		total.sort_by {|key, value| -value }.first(10).map(&:first)
+		total.sort_by {|key, value| -value }.first(num)
 	end
 end
