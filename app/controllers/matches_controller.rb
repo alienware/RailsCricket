@@ -1,6 +1,5 @@
 class MatchesController < ApplicationController
 	include MatchesHelper
-	skip_before_filter :verify_authenticity_token	#temporary patch for curl testing
 
 	def new
 		@match = Match.new
@@ -14,15 +13,20 @@ class MatchesController < ApplicationController
 
 		@statistics = randomStatisticsGenerator team1, team2
 
-		if @match.save
-			[team1, team2].each_with_index { |team, x|
-				team.players.each_with_index { |player, y|
-					addMatchPlayers player, y, team, x
+		respond_to do |format|
+			if @match.save
+				[team1, team2].each_with_index { |team, x|
+					team.players.each_with_index { |player, y|
+						addMatchPlayers player, y, team, x
+					}
 				}
-			}
+				format.html { redirect_to '/', notice: 'Match was successfully created.' }
 
-		else
-			#Handle gracefully new match creation; displaying notice to view
+			else
+				#Handle gracefully new match creation; displaying notice to view
+				format.html { redirect_to '/', notice: 'Match could not be created.' }
+			end
+
 		end
 
 	end

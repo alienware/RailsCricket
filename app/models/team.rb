@@ -3,18 +3,32 @@ class Team < ActiveRecord::Base
 	has_many :matches
 
 	def matches_with_format format
-		[Match.where(:team1_id => self.id, :format => format).pluck(:id), Match.where(:team2_id => self.id, :format => format).pluck(:id)].flatten
+		[Match.includes(:match_players).where(:team1_id => self.id, :format => format), Match.includes(:match_players).where(:team2_id => self.id, :format => format)].flatten
 	end
 
-	def top10 format, field
+	def forTop10 format, field
 		total = {}
 		(self.matches_with_format format).each { |match|
-			match_player = MatchPlayer.find_by_match_id match
-			unless self.players.include? match_player.player
-				total[match_player.player.id] ||= 0
-				total[match_player.player.id] += match_player.send(field)
-			end
+			match.match_players.each { |match_player|
+				if self.players.include? match_player.player
+					total[match_player.player.id] ||= 0
+					total[match_player.player.id] += match_player.send(field)
+				end
+			}
 		}
-		total.sort_by {|key,value| -value}.first(2).map(&:first)
+		total.sort_by {|key,value| -value}.first(10).map(&:first)
+	end
+
+	def againstTop10 format, field
+		total = {}
+		(self.matches_with_format format).each { |match|
+			match.match_players.each { |match_player|
+				unless self.players.include? match_player.player
+					total[match_player.player.id] ||= 0
+					total[match_player.player.id] += match_player.send(field)
+				end
+			}
+		}
+		total.sort_by {|key,value| -value}.first(10).map(&:first)
 	end
 end
