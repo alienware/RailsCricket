@@ -1,6 +1,6 @@
 module MatchesHelper
 
-	def randomStatisticsGenerator team1, team2 #TODO: logic is not perfect, number of players scoring != number of wickets+2
+	def randomStatisticsGenerator team1, team2 #TODO: logic is fixed to a better logic, still a bug with team2 run scoring
 		runs_scored_by_team1 = [*50...300].sample
 		wickets_taken_by_team1 = [*0...team2.players.count].sample
 
