@@ -13,20 +13,18 @@ class MatchesController < ApplicationController
 
 		@statistics = randomStatisticsGenerator team1, team2
 
-		respond_to do |format|
-			if @match.save
-				[team1, team2].each_with_index { |team, x|
-					team.players.each_with_index { |player, y|
-						addMatchPlayers player, y, team, x
-					}
+		if @match.save
+			[team1, team2].each_with_index { |team, x|
+				team.players.each_with_index { |player, y|
+					addMatchPlayers player, y, team, x
 				}
-				format.html { redirect_to '/', notice: 'Match was successfully created.' }
-
-			else
-				#Handle gracefully new match creation; displaying notice to view
-				format.html { redirect_to '/', notice: 'Match could not be created.' }
-			end
-
+			}
+			#format.html { redirect_to '/', notice: 'Match was successfully created.' }
+			render :json => { :message => 'Match has finished. Statistics have been updated. '}, :status => 200
+		else
+			#Handle gracefully new match creation; displaying notice to view
+			#format.html { redirect_to '/', notice: 'Match could not be created.' }
+			render :json => { :message => 'Match cannot be finished. '}, :status => 400
 		end
 
 	end
