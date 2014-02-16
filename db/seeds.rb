@@ -7,14 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #Dummy players
-Player.create(:name => 'Player 1', :dob => 20.years.ago, :role => 'Batsman')
-Player.create(:name => 'Player 2', :dob => 22.years.ago, :role => 'Bowler')
-Player.create(:name => 'Player 3', :dob => 25.years.ago, :role => 'Batsman')
-Player.create(:name => 'Player 4', :dob => 28.years.ago, :role => 'Bowler')
+22.times do |i|
+	Player.create(:name => "Player #{i}", :dob => [*18...41].sample.years.ago, :role => ['Batsman', 'Bowler'].sample)
+end
 
 #Dummy teams
 Team.create(:name => 'Team 1')
 Team.create(:name => 'Team 2')
 
-Team.first.players << Player.first(2)
-Team.last.players << Player.last(2)
+Team.first.players << Player.first(11)
+Team.last.players << Player.last(11)

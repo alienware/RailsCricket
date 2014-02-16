@@ -54,9 +54,12 @@ RailsCricket::Application.routes.draw do
   #     resources :products
   #   end
 	resources :matches
-	resources :players
-	resources :teams
-
-	post '/teams/addPlayer' => 'teams#addPlayer'
-	post '/players/addTeam' => 'player#addTeam'
+	resources :players  do
+		post '/addTeam' => 'players#addTeam'
+		post '/removeTeam' => 'players#removeTeam'
+	end
+	resources :teams do
+		post '/addPlayers' => 'teams#addPlayers', :format => 'json'
+		post '/removePlayers' => 'teams#removePlayers', :format => 'json'
+	end
 end

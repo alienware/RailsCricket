@@ -13,19 +13,26 @@ class PlayersController < ApplicationController
 	end
 
 	def addTeam
-		@player = Player.find(params[:player][:id].to_i)
-		team = Team.find(params[:player][:team].to_i)
+		@player = Player.find(params[:player_id].to_i)
+		team = Team.find(params[:team].to_i)
 
-		team << @player
+		team.players << @player unless team.players.include? @player
 
-		respond_to do |format|
-			format.html { redirect_to '/', :notice => "Player #{@player.name} were successfully added to Team #{team.name}." }
-		end
+		render :json => { :message => "Player has been successfully added to team #{team.name}." }, :status => 200
+	end
+
+	def removeTeam
+		@player = Player.find(params[:player_id].to_i)
+		team = Team.find(params[:team].to_i)
+
+		team.players.delete(@player)
+
+		render :json => { :message => "Player has been successfully removed from team #{team.name}." }, :status => 200
 	end
 
 	private
 
 	def player_params
-		params[:players].permit(:name, :dob, :role)
+		params[:player].permit(:name, :dob, :role)
 	end
 end
