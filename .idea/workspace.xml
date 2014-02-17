@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55276c71-235e-4ab9-8291-76373d7502ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/matches_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/matches_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/match.rb" afterPath="$PROJECT_DIR$/app/models/match.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/matches_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/matches_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RailsCricket.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392575454859" ignored="false" />
+    <ignored path=".idea/" />
+    <ignored path="RailsCricket.iml" />
+    <file path="/Dummy.txt" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392642076949" ignored="false" />
     <file path="/database.yml" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392461418879" ignored="false" />
     <file path="/20140215105358_create_players.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392462752714" ignored="false" />
     <file path="/20140215111315_create_teams.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392462827402" ignored="false" />
@@ -14,10 +19,10 @@
     <file path="/team.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392574457222" ignored="false" />
     <file path="/player.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392572895307" ignored="false" />
     <file path="/format.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392463176025" ignored="false" />
-    <file path="/match.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392571860919" ignored="false" />
+    <file path="/match.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392645165085" ignored="false" />
     <file path="/20140215114734_create_matches_players_join.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392475926838" ignored="false" />
     <file path="/20140215114818_create_players_teams_join.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392465126850" ignored="false" />
-    <file path="/matches_controller.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392572767042" ignored="false" />
+    <file path="/matches_controller.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392644352075" ignored="false" />
     <file path="/match_player.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392475384921" ignored="false" />
     <file path="/seeds.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392542532679" ignored="false" />
     <file path="/20140215121215_add_statistics_to_players.rb" changelist="55276c71-235e-4ab9-8291-76373d7502ff" time="1392476394567" ignored="false" />
@@ -92,25 +97,16 @@
       <file leaf-file-name="matches_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/matches_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="108" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
+            <state line="37" column="77" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="matches_helper.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="matches_helper.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/matches_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="91" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.43990666">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/application.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="14" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0">
+            <state line="30" column="19" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,10 +139,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="match.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="match.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/match.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="104" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
+            <state line="12" column="112" selection-start="500" selection-end="500" vertical-scroll-proportion="0.28004667">
               <folding />
             </state>
           </provider>
@@ -211,17 +207,17 @@
         <option value="$PROJECT_DIR$/app/controllers/match_players_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/matches/index.html.erb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/app/models/match.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/matches_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/player.rb" />
         <option value="$PROJECT_DIR$/app/controllers/players_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/teams_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/team.rb" />
         <option value="$PROJECT_DIR$/app/helpers/matches_helper.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/matches_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/match.rb" />
       </list>
     </option>
   </component>
@@ -259,7 +255,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,8 +432,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -444,18 +440,19 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Ignored.Files" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/RailsCricket.iml" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Rails.Development: RailsCricket">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -598,19 +595,6 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -637,6 +621,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -830,6 +827,23 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="55276c71-235e-4ab9-8291-76373d7502ff" name="Default" comment="" />
@@ -931,13 +945,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140215114734_create_matches_players_join.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="49" selection-start="117" selection-end="117" vertical-scroll-proportion="0.047449585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140215144723_create_match_players.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="20" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
@@ -947,9 +954,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/matches/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="57" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="57" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/match_players_helper.rb">
@@ -983,13 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/match.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="104" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/team.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="47" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
@@ -1000,20 +998,6 @@
     <entry file="file://$PROJECT_DIR$/app/models/player.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="46" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/matches_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="108" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/players_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="91" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1032,9 +1016,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/players_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="91" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/matches_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="91" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.43990666">
+        <state line="30" column="19" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/matches_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="77" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/match.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="112" selection-start="500" selection-end="500" vertical-scroll-proportion="0.28004667">
           <folding />
         </state>
       </provider>

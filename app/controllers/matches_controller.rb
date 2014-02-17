@@ -30,6 +30,17 @@ class MatchesController < ApplicationController
 	end
 
 	def top
-		render :json => { :top => Match.find(params[:match_id]).top(params[:field], params[:num].to_i).to_json }, :status => 200
+		if match = Match.find_by_id(params[:match_id])
+			team = Team.find_by_id(params[:team_id].to_i)
+			if team
+				render :json => { :top => match.top(params[:field], params[:num].to_i, { :team => Team.find(params[:team_id].to_i) }).to_json }, :status => 200
+			else
+				render :json => { :top => match.top(params[:field], params[:num].to_i).to_json }, :status => 200
+			end
+
+		else
+			render :json => { :error => "Match #{params[:match_id] } does not exist." }, :status => 422
+		end
+
 	end
 end
